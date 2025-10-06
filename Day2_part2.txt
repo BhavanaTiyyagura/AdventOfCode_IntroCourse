@@ -1,13 +1,17 @@
 ﻿Puzzle 2, Day 2 Code Explanation
 Bhavana Tiyyagura
 An extension of Day 1, where the same rules apply as before, except if removing a single level from an unsafe report would make it safe, the report instead counts as safe.
+
 For each unsafe report, we add an additional check to see if removing one element from the report would make it safe.
+
 Explanation of code:
+
 Handling Unsafe Report:
 1. If a report fails either rule, we try removing one element at a time from the report.
 2. A temporary array (tempArray) is created for each version with one element removed.
 3. The two rules are checked on each temporary array.
 4. If any temporary array passes both rules, the report is counted as safe, the NoOfSafeReports is incremented and the loop breaks.
+
 Counting Safe Reports:
 1. We pass each report into each rule function (ValueBuffer array) and check if both rules are satisfied.
 2. If both rules are true, the report is safe.
