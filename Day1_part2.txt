@@ -1,0 +1,11 @@
+﻿Puzzle 1, Day 2 Code Explanation
+Bhavana Tiyyagura
+Extension of Puzzle 1, here we “need to figure out exactly how often each number from the left list appears in the right list. Calculate a total similarity score by adding up each number in the left list after multiplying it by the number of times that number appears in the right list”
+In the previous part, we already read the file and have the two lists as leftArray and rightArray.
+Note: Each integer from the left list is treated separately, even if it appears multiple times. For example, if a number appears more than once in leftArray, we still calculate its similarity score each time it occurs.
+Approach to solving the problem:
+* We take each element in the leftArray, and loop over the right list to see how many times that element has occurred in the rightArray.
+* For each match, we increment a counter variable count.
+* After the rightArray has been checked, we calculate the Similarity Score by multiplying the element from the leftArray with the count.
+* Store each similarity score in a list or accumulate it directly.
+* After every element in leftArray has a similarity score, add them all together to get the final result.

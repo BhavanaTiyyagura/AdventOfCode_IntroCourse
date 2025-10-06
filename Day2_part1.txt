@@ -1,0 +1,32 @@
+﻿Puzzle 2, Day 1 Code Explanation
+Bhavana Tiyyagura
+The puzzle gives a file with each line, called a report. representing a list of integers (called levels)
+A report is safe if it passes both these rules:
+1. The levels are either all increasing or all decreasing.
+2. Any two adjacent levels differ by at least one and at most three.
+Approach to solving the problem:
+* Since each report needs to be checked if it’s safe or unsafe, we first read each line from the file and save them into an array.
+* This array is then checked against both the rules
+* If this report passes both the rules, it is safe. The number of safe reports is incremented by one
+* We repeat the same for the other reports in the file.
+Explanation of code:
+Reading each Report:
+1. The program uses fgets to read one line at a time from the file.
+2. Since the number of integers per report is not the same, the line is first copied, and strtok is used to count the integers. 
+3. An integer array of the correct size (valueBuff) is then allocated using malloc.
+4. We use strtok on the line, and we convert each token to an integer using the atoi() function and store the result in an array Valuebuffer.
+Checking the First Rule:
+1. It loops through the report (Valuebuffer array) and compares each element to the next one.
+2. If an element is greater than the next, a decreasing_flag is set.
+3. If an element is smaller than the next, an increasing_flag is set.
+4. If two adjacent elements are equal, the rule fails immediately.
+5. After the loop, if both increasing and decreasing flags are true, the report is unsafe; otherwise, it passes the first rule.
+Checking the Second Rule:
+1. The absolute difference between each pair is calculated by abs(array[i] - array[i+1]).
+2. If any difference is less than 1 or greater than 3, the report is unsafe.
+3. Else the report passes the rule.
+Counting Safe Reports:
+1. We pass each report into each rule function (ValueBuffer array) and check if both rules are satisfied.
+2. If both rules are true, the report is safe.
+3. If the report is safe, a global variable NoOfSafeReports is incremented. 
+4. After each report has been checked, the NoOfSafeReports is displayed.

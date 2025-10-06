@@ -1,0 +1,20 @@
+﻿Puzzle 1, Day 1 Code Explanation
+Bhavana Tiyyagura
+The puzzle gives two separate lists of numbers, where each number represents a location ID. The goal is to figure out how different the two lists are by calculating the difference between the smallest element from the first list and the smallest element of the second list, and so on, after which we add the differences together.
+In the problem, we were given a file with 1000 lines, with each line having two numbers representing elements of the two lists.
+Approach to solving the problem:
+* Read the file into two arrays
+* Sort each list in ascending order
+* Since both lists have the same length, calculating the distance between them involves taking the difference between each corresponding element (list1[0] - list2[0], list1[1] - list2[1], etc.)
+* Sum all those differences to get the final result
+Explanation of code:
+Reading the numbers into the respective lists:
+1. I created two arrays (leftArray and rightArray) and read values from a text file where each line contains two integers using fscanf. 
+2. This is done within a while loop that runs until 1000 entries are read.
+Sorting the list:
+1. I implemented a bubble sort function. This sorting algorithm was used due to its simpler implementation in C.
+2. In the main function, after the location ID integers are read into leftArray and rightArray, I call this sort function to sort them in ascending order.
+Calculating the difference:
+1. Now that the lists are sorted, to calculate the difference, I take the absolute difference between the values at each index using abs(leftArray[i] - rightArray[i]).
+2. This number is added to a running variable that accumulates the total.
+I added all the individual differences together to get the final total. This total represents the “distance” between the two lists.
